@@ -9,7 +9,6 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     public function Create(Request $request){
-        return "OI";
         $product = Product::create([
             'code' => $request['code'],
             'name' => $request['name'],
@@ -17,9 +16,10 @@ class ProductController extends Controller
             'price' => $request['price'],
             'category' => $request['category'],
             'supplier' => $request['supplier'],
+            'qtd' => $request['qtd'],
         ]);
 
-        return $Product;
+        return $product;
     }
 
     public function ReadAll(){
@@ -34,14 +34,14 @@ class ProductController extends Controller
             throw new HttpException(404, "Nenhum registro encontrado (".$id.")");
         }
 
-        $product = Product::save([
-            'code' => $request['code'],
-            'name' => $request['name'],
-            'describe' => $request['describe'],
-            'price' => $request['price'],
-            'category' => $request['category'],
-            'supplier' => $request['supplier'],
-        ]);
+        $product->code = $request->code;
+        $product->name = $request->name;
+        $product->describe = $request->describe;
+        $product->price = $request->price;
+        $product->category = $request->category;
+        $product->supplier = $request->supplier;
+        $product->qtd = $request->qtd;
+        $product->save();
 
         return $product;
     }
@@ -50,6 +50,6 @@ class ProductController extends Controller
         $product = Product::where('id', $request['id'])->first();
         $product->delete();
 
-        return $product;
+        return "Produto apagado com sucesso!";
     }
 }

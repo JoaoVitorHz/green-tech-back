@@ -20,7 +20,7 @@ class Product extends Model
         'describe',
         'price',
         'category',
-        'customer',
+        'supplier',
         'qtd'
     ];
 }
