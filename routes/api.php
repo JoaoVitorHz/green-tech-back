@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\ProductController;
+use  App\Http\Controllers\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('create', [ProductController::class, 'Create']);
-Route::get('getAll', [ProductController::class, 'ReadAll']);
-Route::put('update', [ProductController::class, 'Update']);
-Route::delete('delete', [ProductController::class, 'Delete']);
+Route::post('createProduct', [ProductController::class, 'Create']);
+Route::get('getAllProduct', [ProductController::class, 'ReadAll']);
+Route::put('updateProduct', [ProductController::class, 'Update']);
+Route::delete('deleteProduct', [ProductController::class, 'Delete']);
+
+
+Route::post('createSupplier', [SupplierController::class, 'Create']);
+Route::get('getAllSupplier', [SupplierController::class, 'ReadAll']);
+Route::put('updateSupplier', [SupplierController::class, 'Update']);
+Route::delete('deleteSupplier', [SupplierController::class, 'Delete']);

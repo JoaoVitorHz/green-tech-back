@@ -9,14 +9,15 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     public function Create(Request $request){
+
         $product = Product::create([
-            'code' => $request['code'],
-            'name' => $request['name'],
-            'describe' => $request['describe'],
-            'price' => $request['price'],
-            'category' => $request['category'],
-            'supplier' => $request['supplier'],
-            'qtd' => $request['qtd'],
+            'code' => $request['productCode'],
+            'name' => $request['productName'],
+            'describe' => $request['productDesc'],
+            'price' => $request['productPrice'],
+            'category' => $request['productCategory'],
+            'supplier' => $request['name_supplier'],
+            'qtd' => $request['productQtd'],
         ]);
 
         return $product;
@@ -28,19 +29,19 @@ class ProductController extends Controller
     }
 
     public function Update(Request $request){
-        $product = Product::where('id', $request['id'])->first();
+        $product = Product::where('id', $request['productId'])->first();
 
         if(!$product) {
             throw new HttpException(404, "Nenhum registro encontrado (".$id.")");
         }
 
-        $product->code = $request->code;
-        $product->name = $request->name;
-        $product->describe = $request->describe;
-        $product->price = $request->price;
-        $product->category = $request->category;
-        $product->supplier = $request->supplier;
-        $product->qtd = $request->qtd;
+        $product->code = $request->productCode;
+        $product->name = $request->productName;
+        $product->describe = $request->productDesc;
+        $product->price = $request->productPrice;
+        $product->category = $request->productCategory;
+        $product->supplier = $request->name_supplier;
+        $product->qtd = $request->productQtd;
         $product->save();
 
         return $product;
