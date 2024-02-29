@@ -27,12 +27,17 @@ class ProductController extends Controller
         $product = Product::all();
         return $product;
     }
+    
+    public function Read(Request $request){
+        $product = Product::where('id', $request['id'])->first();
+        return $product;
+    }
 
     public function Update(Request $request){
         $product = Product::where('id', $request['productId'])->first();
 
         if(!$product) {
-            throw new HttpException(404, "Nenhum registro encontrado (".$id.")");
+            throw new HttpException(404, "Nenhum registro encontrado (".$request['productId'].")");
         }
 
         $product->code = $request->productCode;
@@ -47,10 +52,13 @@ class ProductController extends Controller
         return $product;
     }
 
+ 
     public function Delete(Request $request){
         $product = Product::where('id', $request['id'])->first();
         $product->delete();
 
         return "Produto apagado com sucesso!";
     }
+
+   
 }

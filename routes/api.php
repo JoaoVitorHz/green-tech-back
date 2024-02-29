@@ -22,11 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('createProduct', [ProductController::class, 'Create']);
 Route::get('getAllProduct', [ProductController::class, 'ReadAll']);
+Route::post('getProduct', [ProductController::class, 'Read']);
 Route::put('updateProduct', [ProductController::class, 'Update']);
 Route::delete('deleteProduct', [ProductController::class, 'Delete']);
 
 
 Route::post('createSupplier', [SupplierController::class, 'Create']);
 Route::get('getAllSupplier', [SupplierController::class, 'ReadAll']);
+Route::post('getSupplier', [SupplierController::class, 'Read']);
 Route::put('updateSupplier', [SupplierController::class, 'Update']);
 Route::delete('deleteSupplier', [SupplierController::class, 'Delete']);

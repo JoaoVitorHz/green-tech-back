@@ -29,6 +29,11 @@ class SupplierController extends Controller
         $Supplier = Supplier::all();
         return $Supplier;
     }
+  
+    public function Read(Request $request){
+        $Supplier = Supplier::where('id', $request['id'])->first();
+        return $Supplier;
+    }
 
     public function Update(Request $request){
         $Supplier = Supplier::where('id', $request['id_supplier'])->first();
