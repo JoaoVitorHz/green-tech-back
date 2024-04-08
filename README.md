@@ -1,7 +1,7 @@
 ## Introdução 
 Esse é o back-end o projeto GreenTech, o front-end esta no repositorio abaixo 🧐
 
-`https://github.com/JoaoVitorHz/GreenTech`
+`https://github.com/JoaoVitorHz/green-tech-next`
 
 ## Tecnologias Usadas 
 - PHP
