@@ -1,31 +1,33 @@
-## Introdução 
-Esse é o back-end o projeto GreenTech, o front-end esta no repositorio abaixo 🧐
+## Introduction
+This is the back-end of the GreenTech project. The front-end can be found in the repository below 🧐
 
 `https://github.com/JoaoVitorHz/green-tech-next`
 
-## Tecnologias Usadas 
+## Technologies Used
 - PHP
 - Laravel
-- MySql
-  
- ## Para usar o projeto 
- - Para você testar o projeto e necessario que você tenha o `composer` instalado na sua maquina
- - E também tenho  o `PHP` como variavel de ambiente!
- 
- - Agora faça clone do repositorio.
- - Depois de clonar o repostiorio instale as dependecia do projeto.
+- MySQL
+
+## How to Use the Project
+- To test the project, you need to have `Composer` installed on your machine.
+- You also need to have `PHP` set as an environment variable!
+
+- Now clone the repository.
+- After cloning the repository, install the project dependencies.
+
  ```
      composer install
  ```
- - Crie um banco de dados chamando `green_tech`
- - Crie um arquivo .env, copie oque estiver dentro do arquivo .env.example para dentro do arquivo .env que você criou e configure as variaveis de ambiente.
+ - Create a database named `green_tech`.
+- Create a `.env` file, copy the contents of the `.env.example` file into the `.env` file you created, and configure the environment variables.
 
- - Depois de configurar as variaveis de ambiente dentro do arquivo .env, execute as migration para criar as tabelas do banco de dados.
+- After configuring the environment variables in the `.env` file, run the migrations to create the database tables.
+
  ```
      php artisan migrate
  ```
 
-- Agora rode o projeto
+- Now run the project.
  ```
      php artisan serve
  ```
